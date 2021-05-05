@@ -41,9 +41,10 @@ const lut = new LUT( {
         { value: 60, color: ColorRGBA( 255, 128, 0 ) },
         { value: 100, color: ColorRGBA( 255, 0, 0 ) }
     ],
+    units: 'dB',
     interpolate: true
 } )
-const paletteFill = new PalettedFill( { lut, lookUpProperty: 'value' } )
+const paletteFill = new PalettedFill( { lut, lookUpProperty: 'y' } )
 
 
 // Create Chart3D and configure Axes.
@@ -69,6 +70,7 @@ chart3D.getDefaultAxisZ()
 const boxSeries = chart3D.addBoxSeries()
     .setFillStyle( paletteFill )
     .setRoundedEdges( undefined )
+    .setName('Spectrogram (box)')
 
 
 
@@ -93,6 +95,9 @@ for ( let sampleIndex = 0; sampleIndex < dataHistoryLength; sampleIndex++ ) {
     }
     boxGrid.push( sampleBoxIDs )
 }
+
+// Add LegendBox to chart.
+const legend = chart3D.addLegendBox().add(chart3D)
 
 
 let sampleIndex = 0
@@ -124,8 +129,6 @@ createSpectrumDataGenerator()
                 yMax: y,
                 zMin: sampleIndex,
                 zMax: sampleIndex + 1.0,
-                // Color each Box by their sampled Y value (height).
-                value: y
             } ) )
             boxSeries.invalidateData( boxesData )
 
@@ -190,3 +193,6 @@ const handleCameraAnimationToggled = ( state ) => {
 const cameraAnimationEnabledCheckbox = group.addElement( UIElementBuilders.CheckBox )
 cameraAnimationEnabledCheckbox.onSwitch((_, state) => handleCameraAnimationToggled( state ))
 handleCameraAnimationToggled( true )
+chart3D.onBackgroundMouseDrag(() => {
+    handleCameraAnimationToggled( false )
+})
