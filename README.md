@@ -1,6 +1,6 @@
-# Spectrogram Box Series 3D
+# JavaScript Spectrogram Box Series 3D
 
-![Spectrogram Box Series 3D](3dSpectrogramBox.png)
+![JavaScript Spectrogram Box Series 3D](3dSpectrogramBox.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
