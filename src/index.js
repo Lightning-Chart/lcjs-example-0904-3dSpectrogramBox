@@ -49,7 +49,7 @@ const paletteFill = new PalettedFill( { lut, lookUpProperty: 'y' } )
 
 // Create Chart3D and configure Axes.
 const chart3D = lightningChart().Chart3D({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
     .setTitle( '3D Box Series Spectrogram' )
     .setBoundingBox( { x: 1, y: 1, z: 2 } )
@@ -97,7 +97,13 @@ for ( let sampleIndex = 0; sampleIndex < dataHistoryLength; sampleIndex++ ) {
 }
 
 // Add LegendBox to chart.
-const legend = chart3D.addLegendBox().add(chart3D)
+const legend = chart3D.addLegendBox()
+    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
+    .setAutoDispose({
+        type: 'max-width',
+        maxWidth: 0.30,
+    })
+    .add(chart3D)
 
 
 let sampleIndex = 0
@@ -171,6 +177,11 @@ group
     .setOrigin( UIOrigins.LeftTop )
     .setMargin( 10 )
     .setPadding( 4 )
+    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
+    .setAutoDispose({
+        type: 'max-height',
+        maxHeight: 0.30,
+    })
 
 // Add UI control for toggling between infinite streaming data and static data amount.
 const handleStreamingToggled = ( state ) => {
