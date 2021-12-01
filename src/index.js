@@ -49,6 +49,7 @@ const paletteFill = new PalettedFill( { lut, lookUpProperty: 'y' } )
 
 // Create Chart3D and configure Axes.
 const chart3D = lightningChart().Chart3D({
+    disableAnimations: true,
     // theme: Themes.darkGold
 })
     .setTitle( '3D Box Series Spectrogram' )

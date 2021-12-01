@@ -55,8 +55,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[3D chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/chart3d.html
-[3D box series]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/boxseries3d.html
-[Paletted Fill Style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/palettedfill.html
-[LUT]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/lut.html
+[3D chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/chart3d.html
+[3D box series]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/boxseries3d.html
+[Paletted Fill Style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/palettedfill.html
+[LUT]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/lut.html
 
