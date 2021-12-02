@@ -147,7 +147,7 @@ createSpectrumDataGenerator()
 // Animate Camera movement from file.
 ;(async () => {
     const cameraAnimationData = await (
-        fetch( document.head.baseURI + 'examples/assets/lcjs_example_0904_3dSpectrogramBox-camera.json' )
+        fetch( document.head.baseURI + 'examples/assets/0904/camera.json' )
             .then( r => r.json() )
     )
     if ( ! cameraAnimationData ) {
