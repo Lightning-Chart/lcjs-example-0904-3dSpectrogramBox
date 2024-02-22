@@ -50,7 +50,7 @@ chart3D.getDefaultAxisX().setTitle('Frequency (Hz)')
 chart3D
     .getDefaultAxisZ()
     .setTitle('Time')
-    .setInterval({ start: 0, end: -dataHistoryLength, stopAxisAfter: false })
+    .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - dataHistoryLength, stopAxisAfter: false }))
     .setScrollStrategy(AxisScrollStrategies.progressive)
 
 // Setup PalettedFill for dynamically coloring Boxes by an associated 'value' property.
