@@ -36,7 +36,7 @@ const initialCameraLocation = { x: 0.1, y: 0.08, z: 1.2 }
 // Create Chart3D and configure Axes.
 const chart3D = lightningChart()
     .Chart3D({
-        // theme: Themes.darkGold
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('3D Box Series Spectrogram')
     .setBoundingBox({ x: 1, y: 1, z: 2 })
