@@ -34,7 +34,9 @@ const dataHistoryLength = 120
 const initialCameraLocation = { x: 0.1, y: 0.08, z: 1.2 }
 
 // Create Chart3D and configure Axes.
-const chart3D = lightningChart()
+const chart3D = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        })
     .Chart3D({
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
