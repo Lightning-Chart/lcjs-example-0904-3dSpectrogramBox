@@ -2,10 +2,10 @@
  * LightningChartJS example that showcases Box Series 3D to render a 3D spectrogram.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Import xydata
-const xydata = require('@arction/xydata')
+const xydata = require('@lightningchart/xydata')
 
 // Extract required parts from LightningChartJS.
 const {
@@ -47,8 +47,8 @@ chart3D
     .getDefaultAxisY()
     .setScrollStrategy(AxisScrollStrategies.expansion)
     .setInterval({ start: 0, end: 100, stopAxisAfter: false })
-    .setTitle('Power spectrum P(f)')
-chart3D.getDefaultAxisX().setTitle('Frequency (Hz)')
+    .setTitle('Power spectrum').setUnits('P(f)')
+chart3D.getDefaultAxisX().setTitle('Frequency').setUnits('Hz')
 chart3D
     .getDefaultAxisZ()
     .setTitle('Time')
