@@ -47,7 +47,8 @@ chart3D
     .getDefaultAxisY()
     .setScrollStrategy(AxisScrollStrategies.expansion)
     .setInterval({ start: 0, end: 100, stopAxisAfter: false })
-    .setTitle('Power spectrum').setUnits('P(f)')
+    .setTitle('Power spectrum')
+    .setUnits('P(f)')
 chart3D.getDefaultAxisX().setTitle('Frequency').setUnits('Hz')
 chart3D
     .getDefaultAxisZ()
@@ -180,7 +181,7 @@ const handleStreamingToggled = (state) => {
     }
 }
 const toggleStreamingCheckBox = group.addElement(UIElementBuilders.CheckBox)
-toggleStreamingCheckBox.onSwitch((_, state) => handleStreamingToggled(state))
+toggleStreamingCheckBox.addEventListener('switch', (event) => handleStreamingToggled(event.state))
 handleStreamingToggled(true)
 
 // Add UI control for toggling camera animation.
@@ -191,8 +192,8 @@ const handleCameraAnimationToggled = (state) => {
     }
 }
 const cameraAnimationEnabledCheckbox = group.addElement(UIElementBuilders.CheckBox)
-cameraAnimationEnabledCheckbox.onSwitch((_, state) => handleCameraAnimationToggled(state))
+cameraAnimationEnabledCheckbox.addEventListener('switch', (event) => handleCameraAnimationToggled(event.state))
 handleCameraAnimationToggled(true)
-chart3D.onBackgroundMouseDrag(() => {
+chart3D.background.addEventListener('pointerdown', () => {
     handleCameraAnimationToggled(false)
 })
