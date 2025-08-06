@@ -20,6 +20,7 @@ const {
     UIBackgrounds,
     regularColorSteps,
     Themes,
+    LegendPosition,
 } = lcjs
 
 const { createSpectrumDataGenerator } = xydata
@@ -38,6 +39,9 @@ const chart3D = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         })
     .Chart3D({
+        legend: { 
+            position: LegendPosition.RightCenter
+        },
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('3D Box Series Spectrogram')
@@ -54,7 +58,7 @@ chart3D
     .getDefaultAxisZ()
     .setTitle('Time')
     .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - dataHistoryLength, stopAxisAfter: false }))
-    .setScrollStrategy(AxisScrollStrategies.progressive)
+    .setScrollStrategy(AxisScrollStrategies.scrolling)
 
 // Setup PalettedFill for dynamically coloring Boxes by an associated 'value' property.
 const theme = chart3D.getTheme()
@@ -91,16 +95,6 @@ for (let sampleIndex = 0; sampleIndex < dataHistoryLength; sampleIndex++) {
     }
     boxGrid.push(sampleBoxIDs)
 }
-
-// Add LegendBox to chart.
-const legend = chart3D
-    .addLegendBox()
-    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.3,
-    })
-    .add(chart3D)
 
 let sampleIndex = 0
 createSpectrumDataGenerator()
