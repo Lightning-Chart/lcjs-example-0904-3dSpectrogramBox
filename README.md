@@ -52,11 +52,11 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://lightningchart.com/support-services/
 
-© LightningChart Ltd 2009-2025. All rights reserved.
+© LightningChart Ltd 2009-2026. All rights reserved.
 
 
-[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/Chart3D.html
-[3D box series]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/BoxSeries3D.html
-[Paletted Fill Style]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/PalettedFill.html
-[LUT]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/LUT.html
+[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/Chart3D.html
+[3D box series]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/BoxSeries3D.html
+[Paletted Fill Style]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/PalettedFill.html
+[LUT]: https://lightningchart.com/js-charts/api-documentation/v8.2.0/classes/LUT.html
 
